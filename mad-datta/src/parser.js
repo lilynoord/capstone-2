@@ -48,6 +48,14 @@ const parser = (fileText) => {
 			parsedData[column]["data"],
 			parsedData[column]["type"]
 		);
+		if (parsedData[column]["type"] === "string") {
+			parsedData[column]["options"] = [];
+			parsedData[column]["data"].forEach((d) => {
+				if (!parsedData[column]["options"].includes(d)) {
+					parsedData[column]["options"].push(d);
+				}
+			});
+		}
 	}
 
 	return parsedData;
