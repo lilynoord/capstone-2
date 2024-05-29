@@ -7,9 +7,11 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "seed":"dropdb maddatta && createdb maddatta && psql maddatta < data.sql && dropdb maddatta_test && createdb maddatta_test && psql maddatta_test < data.sql"
   },
   "dependencies": {
+    "dotenv": "^16.4.5",
     "pg": "^8.11.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
