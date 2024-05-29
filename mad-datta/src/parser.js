@@ -33,9 +33,9 @@ const parser = (fileText) => {
 		}
 	}
 
-	//TODO: Add the parsed data into the database!
+	return parsedData;
 };
-parser(
-	"strings\tfloats\tbools\n1option1\t1.3\tfalse\n2option2\t1.6663\tFalse\n3option3\t44.3\ttrue"
-); //Test call for building it //TODO: Delete this
+// parser(
+// 	"strings\tfloats\tbools\n1option1\t1.3\tfalse\n2option2\t1.6663\tFalse\n3option3\t44.3\ttrue"
+// ); //Test call for building it //TODO: Delete this
 export default parser;
