@@ -1,15 +1,29 @@
+import { DateTime } from "luxon";
+
 const checkType = (val) => {
 	if (!isNaN(val)) {
 		return "number";
 	} else if (val.toUpperCase() === "FALSE" || val.toUpperCase() === "TRUE") {
 		return "boolean";
+	} else if (DateTime.fromISO(val).isValid) {
+		return "date";
 	}
 	return "string";
 };
 
+const dataConverter = (data, type) => {
+	if (type === "number") {
+		return data.map((d) => Number(d));
+	} else if (type === "boolean") {
+		return data.map((d) => Boolean(d.toUpperCase()));
+	} else if (type === "date") {
+		return data.map((d) => DateTime.fromISO(d));
+	}
+	return data;
+};
 const parser = (fileText) => {
 	//Reads the file text and generates a list of dictionaries for each column
-	let lines = fileText.split("\n");
+	let lines = fileText.split("\r\n");
 	let headerLine = lines.shift().split("\t");
 	let parsedData = [];
 	headerLine.forEach((header) =>
@@ -17,7 +31,6 @@ const parser = (fileText) => {
 	);
 
 	let columnedLines = lines.map((row) => row.split("\t"));
-	console.log(columnedLines);
 
 	//iterates through each column, line by line, and adds the data to the respective header in parsedData.
 	//additionally checks to see if the column is consistently a number or a boolean and sets it as such or otherwise to a string type.
@@ -31,6 +44,10 @@ const parser = (fileText) => {
 			}
 			parsedData[column]["data"].push(columnedLines[row][column]);
 		}
+		parsedData[column]["data"] = dataConverter(
+			parsedData[column]["data"],
+			parsedData[column]["type"]
+		);
 	}
 
 	return parsedData;
