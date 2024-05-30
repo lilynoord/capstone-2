@@ -17,7 +17,7 @@ const dataConverter = (data, type) => {
 	} else if (type === "boolean") {
 		return data.map((d) => Boolean(d.toUpperCase()));
 	} else if (type === "date") {
-		return data.map((d) => DateTime.fromISO(d));
+		return data.map((d) => DateTime.fromISO(d).toISODate());
 	}
 	return data;
 };

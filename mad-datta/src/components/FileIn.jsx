@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-
+import {routes} from "../../config.js";
 
 
 // Reads the file as text and then stores it in session storage. 
@@ -13,7 +13,7 @@ const storeFile = async (file) => {
 
   
 const FileIn = () => {
-
+    
     const nav = useNavigate()
     const handleClick = (evt) => {
         evt.preventDefault();
@@ -21,7 +21,7 @@ const FileIn = () => {
         const file = evt.target[0].files[0];
         storeFile(file);
         
-        nav("/file-details")
+        nav(routes.file_parse)
     }
     let thisForm = (
         <div>
