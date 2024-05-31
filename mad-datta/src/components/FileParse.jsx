@@ -14,7 +14,9 @@ const FileParse = () => {
 	}
 	const nav = useNavigate()
 	const handleGoodClick = () => {
+		localStorage.setItem('parsed_data',JSON.stringify(parsedData))
 		nav(routes.analysis_main)
+
 	}
 
 	const handleBadClick = () => {

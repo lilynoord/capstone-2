@@ -6,11 +6,17 @@ import AnalysisMain from './components/AnalysisMain.jsx';
 import './App.css'
 import {routes} from "../config.js"
 
+import '@mantine/core/styles.css';
 
+import { createTheme,MantineProvider } from '@mantine/core';
 
-function App() {
-   
-  return (
+const theme = createTheme({
+  fontFamily: 'Montserrat, sans-serif',
+  defaultRadius: 'md',
+});
+
+export default function App() {
+  return <MantineProvider theme={theme}>{
     <div>
       <BrowserRouter>
       <Routes>
@@ -22,10 +28,12 @@ function App() {
       </BrowserRouter>
       
     </div>
-  )
+    
+    }</MantineProvider>;
 }
 
 
 
 
-export default App
+
+

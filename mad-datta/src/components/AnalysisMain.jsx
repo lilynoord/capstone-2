@@ -2,12 +2,16 @@ import {url} from '../../config.js'
 import AnalysisCard from './AnalysisCard.jsx'
 
 const AnalysisMain = () => {
+    
     return(
         <div>
             <table>
+                <tbody>
+
+                
                 <tr>
                     <td>
-                        <AnalysisCard type="Histogram" />
+                        <AnalysisCard type="a-over-b" />
                     </td>
                     <td>
                         <AnalysisCard type="Bar graph" />
@@ -38,7 +42,7 @@ const AnalysisMain = () => {
                     <td>
                         
                     </td>
-                </tr>
+                </tr></tbody>
             </table>
             
             
