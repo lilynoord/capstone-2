@@ -4,6 +4,6 @@ const routes = {
 	analysis_main: "/analysis-main",
 };
 
-const filler = "";
+const url = "https://image-charts.com/chart?";
 
-export { routes };
+export { routes, url };

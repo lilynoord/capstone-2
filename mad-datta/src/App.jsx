@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import FileIn from './components/FileIn.jsx'
 import FileParse from './components/FileParse.jsx'
+import AnalysisMain from './components/AnalysisMain.jsx';
 import './App.css'
 import {routes} from "../config.js"
 
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path={routes.file_in} element={<FileIn/>}/>
         <Route path={routes.file_parse} element={<FileParse/>} />
+        <Route path={routes.analysis_main} element={<AnalysisMain />}/>
       </Routes>
       
       </BrowserRouter>

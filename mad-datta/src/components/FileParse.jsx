@@ -14,7 +14,7 @@ const FileParse = () => {
 	}
 	const nav = useNavigate()
 	const handleGoodClick = () => {
-
+		nav(routes.analysis_main)
 	}
 
 	const handleBadClick = () => {
