@@ -37,22 +37,22 @@ const parser = (fileText) => {
 	for (let column = 0; column < parsedData.length; column++) {
 		for (let row = 0; row < columnedLines.length; row++) {
 			let type = checkType(columnedLines[row][column]);
-			if (parsedData[column]["type"] === "") {
-				parsedData[column]["type"] = type;
-			} else if (parsedData[column]["type"] !== type) {
-				parsedData[column]["type"] = "string";
+			if (parsedData[column].type === "") {
+				parsedData[column].type = type;
+			} else if (parsedData[column].type !== type) {
+				parsedData[column].type = "string";
 			}
-			parsedData[column]["data"].push(columnedLines[row][column]);
+			parsedData[column].data.push(columnedLines[row][column]);
 		}
-		parsedData[column]["data"] = dataConverter(
-			parsedData[column]["data"],
-			parsedData[column]["type"]
+		parsedData[column].data = dataConverter(
+			parsedData[column].data,
+			parsedData[column].type
 		);
-		if (parsedData[column]["type"] === "string") {
-			parsedData[column]["options"] = [];
-			parsedData[column]["data"].forEach((d) => {
-				if (!parsedData[column]["options"].includes(d)) {
-					parsedData[column]["options"].push(d);
+		if (parsedData[column].type === "string") {
+			parsedData[column].options = [];
+			parsedData[column].data.forEach((d) => {
+				if (!parsedData[column].options.includes(d)) {
+					parsedData[column].options.push(d);
 				}
 			});
 		}
