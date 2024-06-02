@@ -2,6 +2,7 @@ import parser from "../parser.js"
 import { useNavigate } from "react-router-dom";
 import {routes} from "../../config.js"
 const FileParse = () => {
+	console.log("1")
 	const fileText = JSON.parse(localStorage.getItem("uploadedFile"))
 	let parsedData = parser(fileText)
 	const parseStyle = {

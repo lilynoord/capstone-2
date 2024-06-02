@@ -9,7 +9,6 @@ import {routes} from "../config.js"
 import '@mantine/core/styles.css';
 
 import { createTheme,MantineProvider } from '@mantine/core';
-import AOverBAnalyzer from './analyzers/AOverBAnalyzer.js';
 import DoAnalysis from './components/DoAnalysis.jsx';
 
 const theme = createTheme({

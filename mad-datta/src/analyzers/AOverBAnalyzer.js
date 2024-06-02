@@ -3,6 +3,7 @@ function IncidenceOverTime(yData, xData) {
 		!acc.includes(data) ? acc.push(data) : null;
 		return acc;
 	}, []);
+
 	return series;
 } //Line Graph
 
@@ -66,7 +67,6 @@ const AOverBAnalyzer = () => {
 	const xType = getAxisType(filteredB.type);
 
 	const data = handleGraph(yType, xType, filteredA, filteredB);
-	console.log(data);
 	return data;
 };
 
