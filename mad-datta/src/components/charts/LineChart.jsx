@@ -55,6 +55,7 @@ const ReactiveLineChart = (props) => {
                         dataKey={dataKey}
                         series={series}
                         curveType="linear"
+                        withLegend
                      />
                     </td>
                     <td>
