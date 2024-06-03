@@ -1,7 +1,7 @@
 import { LineChart } from "@mantine/charts";
 import AOverBAnalyzer from "../analyzers/AOverB/AOverBAnalyzer"
 import { useState } from "react";
-import ReactiveLineChart from "./charts/LineChart";
+import ReactiveLineChart from "./charts/ReactiveLineChart";
 
 const DoAnalysis = (props) => {
     let analyzedData;

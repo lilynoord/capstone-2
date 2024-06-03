@@ -56,16 +56,17 @@ const ReactiveLineChart = (props) => {
                         series={series}
                         curveType="linear"
                         withLegend
+                        xAxisProps={{tickMargin:15,angle:-30}}
                      />
                     </td>
                     <td>
                         <ul>
                             {masterSeries.map((s ) => 
                             <Checkbox 
-                            defaultChecked 
+                            defaultChecked
                             label={s.name} 
                             color={s.color}
-                             
+                            
                             onChange={() =>{
                                 
                                 const newSeries = pushPopSeries(s);
@@ -82,7 +83,7 @@ const ReactiveLineChart = (props) => {
                 </tr>
                 <tr>
                     <td>
-                    <Checkbox   size="md" label={"Normalize Data"} onChange={()=> {setData(normalize())}}/>
+                    <Checkbox  defaultChecked = {normalized} size="md" label={"Normalize Data"} onChange={()=> {setData(normalize())}}/>
                          
                     </td>
                 </tr>
