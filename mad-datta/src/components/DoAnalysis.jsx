@@ -1,5 +1,7 @@
 import { LineChart } from "@mantine/charts";
-import AOverBAnalyzer from "../analyzers/AOverBAnalyzer"
+import AOverBAnalyzer from "../analyzers/AOverB/AOverBAnalyzer"
+import { useState } from "react";
+import ReactiveLineChart from "./LineChart";
 
 const DoAnalysis = (props) => {
     let analyzedData;
@@ -12,22 +14,7 @@ const DoAnalysis = (props) => {
     let chart;
     
     if (analyzedData.chartType === "line"  ) {
-        chart = (
-                <div>
-                    <LineChart
-                w={600}
-                h={300}
-                data={analyzedData.data}
-                dataKey={analyzedData.dataKey}
-                series={analyzedData.series}
-                curveType="linear"
-                />
-                 
-                </div>
-                
-             
-        )
-       // console.log(chart)
+        return (<ReactiveLineChart analyzedData={analyzedData}/>)
     }
     return chart
 }

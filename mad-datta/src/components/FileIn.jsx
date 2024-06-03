@@ -16,11 +16,11 @@ const storeFile = async (file) => {
 const FileIn = () => {
     const [value, setValue ]= useState(null);
     const nav = useNavigate()
-    const handleClick = (evt) => {
+    const handleClick = async (evt) => {
         evt.preventDefault();
         console.log(value)
         const file = value
-        storeFile(file);
+        await storeFile(file);
         
         nav(routes.file_parse)
     }
