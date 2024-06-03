@@ -35,8 +35,9 @@ export default function incidenceOverTime(yData, xData) {
 		}
 	});
 	dataPackage.dataAbsolute = sortDataByDate(unsortedData);
-	dataPackage.dataNormalized = normalizeLineData(dataPackage.dataAbsolute);
 	dataPackage.dataKey = "date";
+	dataPackage.dataNormalized = normalizeLineData(dataPackage);
+
 	console.log(dataPackage);
 	return dataPackage;
 } //Line Graph
