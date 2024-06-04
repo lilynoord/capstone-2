@@ -1,11 +1,8 @@
+import incidenceOverIncidence from "./incidenceOverIncidence";
+import incidenceOverNumber from "./incidenceOverNumber";
 import incidenceOverTime from "./incidenceOverTime";
 
-function incidenceOverNumber(yData, xData) {} //Line Graph
-
-function incidenceOverIncidence(yData, xData) {} //Bar Graph
-
 const handleGraph = (xType, yData, xData) => {
-	console.log(xType);
 	if (xType === "date") {
 		return incidenceOverTime(yData, xData);
 	} else if (xType === "number") {

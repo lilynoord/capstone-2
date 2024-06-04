@@ -23,8 +23,9 @@ export default function App() {
       <Routes>
         <Route path={routes.file_in} element={<FileIn/>}/>
         <Route path={routes.file_parse} element={<FileParse/>} />
-        <Route path={routes.analysis_main} element={<AnalysisMain />}/>
+        <Route path={`${routes.analysis_main}`} element={<AnalysisMain />}/>
         <Route path={routes.a_over_b} element={<DoAnalysis what={routes.a_over_b}/>} />
+        
       </Routes>
       
       </BrowserRouter>
