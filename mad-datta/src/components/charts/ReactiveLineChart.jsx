@@ -35,7 +35,7 @@ const ReactiveLineChart = (props) => {
         let i = 0;
         seriesSplice.some((element,index) =>{
             i = index; 
-            console.log(element.name === item.name)
+            // console.log(element.name === item.name)
             return element.name === item.name
         }) 
         ? seriesSplice.splice(i,1) 

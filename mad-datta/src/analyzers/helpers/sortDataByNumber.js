@@ -4,13 +4,17 @@ export default function sortDataByNumber(unsortedData) {
 	let sortedKeys = [];
 	unsortedKeys.map((key) => {
 		let index = 0;
+		key = Number(key);
 		while (index < sortedKeys.length) {
-			if (key < sortedKeys[index]) {
+			// console.log(index, sortedKeys.length, key, sortedKeys[index]);
+			if (key < Number(sortedKeys[index])) {
 				break;
 			}
 			index++;
 		}
+
 		sortedKeys.splice(index, 0, key);
+		// console.log("splice", sortedKeys);
 	});
 	//console.log(sortedKeys);
 	sortedKeys.map((key) => {

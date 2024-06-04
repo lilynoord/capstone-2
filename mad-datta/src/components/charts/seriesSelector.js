@@ -9,7 +9,7 @@ export default function seriesSelector(selected, data, dataKey) {
 	const selectedNames = selected.map((n) => {
 		return n.name;
 	});
-	console.log(selectedNames);
+	// console.log(selectedNames);
 	let newData = data.map((point) => {
 		const keys = Object.keys(point);
 		let blank = {};
@@ -23,6 +23,6 @@ export default function seriesSelector(selected, data, dataKey) {
 
 		return blank;
 	});
-	console.log(data, newData);
+	// console.log(data, newData);
 	return newData;
 }
