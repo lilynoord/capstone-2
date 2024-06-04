@@ -11,7 +11,7 @@ const AnalysisMain = () => {
                 
                 <tr>
                     <td>
-                        <AnalysisCard type="a-over-b" />
+                        <AnalysisCard type="incidence-over-x" />
                     </td>
                     <td>
                         <AnalysisCard type="Bar graph" />

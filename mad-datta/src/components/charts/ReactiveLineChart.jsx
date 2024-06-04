@@ -7,12 +7,12 @@ import seriesSelector from "./seriesSelector";
 let normalized = false;
 const ReactiveLineChart = (props) => {
     let analyzedData = props.analyzedData;
-     const dataKey = analyzedData.dataKey;
-    const [data, setData] = useState(analyzedData.dataAbsolute);
+    const dataKey = analyzedData.dataKey;
+    const [data, setData] = useState(normalized ? analyzedData.dataNormalized : analyzedData.dataAbsolute);
     const masterSeries = structuredClone(analyzedData.series);
     const masterDataAbsolute = structuredClone(analyzedData.dataAbsolute);
     const masterDataNormalized = structuredClone(analyzedData.dataNormalized);
-    let masterData = masterDataAbsolute;
+    let masterData = normalized ? masterDataNormalized : masterDataAbsolute;
     Object.freeze(masterSeries);
     Object.freeze(masterDataAbsolute);
     Object.freeze(masterDataNormalized);

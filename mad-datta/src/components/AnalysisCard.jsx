@@ -2,7 +2,7 @@ import { Select, Card, Text} from "@mantine/core"
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { routes } from "../../config";
-import AOverBCard from "./AOverBCard";
+import IncidenceOverXCard from "./IncidenceOverXCard";
 
 
 
@@ -25,9 +25,9 @@ const AnalysisCard = (props) => {
     const handleClick = () => {
         nav(redirectURL)
     }
-    if (type === "a-over-b"){
-        title = "A over B"
-        card = (<AOverBCard/> )
+    if (type === "incidence-over-x"){
+        title = "Incidence-Over-X"
+        card = (<IncidenceOverXCard/> )
         redirectURL = routes.a_over_b
     } else {
         title = "Null"

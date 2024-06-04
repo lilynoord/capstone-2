@@ -1,12 +1,13 @@
 import { LineChart } from "@mantine/charts";
-import AOverBAnalyzer from "../analyzers/AOverB/AOverBAnalyzer"
+import IncidenceOverXAnalyzer from "../analyzers/AOverB/IncidenceOverXAnalyzer"
 import { useState } from "react";
 import ReactiveLineChart from "./charts/ReactiveLineChart";
+import { routes } from "../../config";
 
 const DoAnalysis = (props) => {
     let analyzedData;
-    if(props.what === "a-over-b") {
-        analyzedData = AOverBAnalyzer();
+    if(props.what === routes.a_over_b) {
+        analyzedData = IncidenceOverXAnalyzer();
     } else {
         analyzedData = "null"
     }

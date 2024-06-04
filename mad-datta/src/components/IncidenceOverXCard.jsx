@@ -1,7 +1,7 @@
 import { Select,  } from "@mantine/core"
 import { useEffect, useState } from "react";
  useEffect
-const AOverBCard = () =>
+const IncidenceOverXCard = () =>
     {
         
     const [valueA, setValueA ]= useState(null);
@@ -12,8 +12,8 @@ const AOverBCard = () =>
     const options = parsedData.map((m) => m.label)
     const card = (
         <div>
-            <Select label="Column A (Y-Axis)" placeholder="Select Column" data={options} value={valueA} onChange={(e) =>{setValueA(e);localStorage.setItem("valueA",e)}}/>
-            <Select label="Column B (X-Axis)" placeholder="Select Column" data={options} value={valueB} onChange={(e) => {setValueB(e);localStorage.setItem("valueB",e)}}/>
+            <Select label="Select column to represent incidence (y-axis):" placeholder="Select Column" data={options} value={valueA} onChange={(e) =>{setValueA(e);localStorage.setItem("valueA",e)}}/>
+            <Select label="Select column to use as x-axis: " placeholder="Select Column" data={options} value={valueB} onChange={(e) => {setValueB(e);localStorage.setItem("valueB",e)}}/>
             
         </div>
         
@@ -23,4 +23,4 @@ const AOverBCard = () =>
     }
 
 
-export default AOverBCard
+export default IncidenceOverXCard
