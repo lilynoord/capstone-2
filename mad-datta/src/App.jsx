@@ -8,17 +8,30 @@ import {routes} from "../config.js"
 
 import '@mantine/core/styles.css';
 
-import { createTheme,MantineProvider } from '@mantine/core';
+import {   createTheme,MantineProvider } from '@mantine/core';
 import DoAnalysis from './components/DoAnalysis.jsx';
-
+const NavBar = () => {
+  return (
+    <nav> 
+      <button>Upload File</button>
+      <button>Review File</button>
+      <button>Select Analysis</button>
+    </nav>
+    
+  )
+}
 const theme = createTheme({
   fontFamily: 'Montserrat, sans-serif',
   defaultRadius: 'md',
 });
-
+const items = [
+  {title: "A", href:routes.a_over_b}
+]
 export default function App() {
   return <MantineProvider theme={theme}>{
     <div>
+      <NavBar/>
+      <br></br>
       <BrowserRouter>
       <Routes>
         <Route path={routes.file_in} element={<FileIn/>}/>
