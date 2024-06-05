@@ -29,7 +29,7 @@ import AnalysisCard from './cards/AnalysisCard.jsx'
                          
                     </td>
                     <td>
-                        <AnalysisCard type="Bar graph" />
+                        <AnalysisCard type="frequency-histogram" />
             
                     </td>
                     <td>

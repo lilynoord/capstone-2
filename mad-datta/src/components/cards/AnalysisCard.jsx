@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { routes } from "../../../config";
 import IncidenceOverXCard from "./IncidenceOverXCard";
-
+import FrequencyHistogramCard from "./FrequencyHistogramCard";
 
 
 
@@ -29,6 +29,9 @@ const AnalysisCard = (props) => {
         title = "Incidence-Over-X"
         card = (<IncidenceOverXCard/> )
         redirectURL = routes.a_over_b
+    } else if (type === "frequency-histogram"){
+        title = "Frequency Histogram"
+        card =(<FrequencyHistogramCard/>)
     } else {
         title = "Null"
         card = (<Text>"Not Found"</Text>)
@@ -36,7 +39,7 @@ const AnalysisCard = (props) => {
 
 
     return (
-        <Card shadow="sm" padding="lg" radius="md" withBorder>
+        <Card  shadow="sm" padding="lg" radius="md" withBorder>
             <Card.Section withBorder>
                 <Text>{title}</Text>
             </Card.Section>
