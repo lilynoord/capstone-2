@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
 import FileIn from './components/FileIn.jsx'
 import FileParse from './components/FileParse.jsx'
 import AnalysisMain from './components/AnalysisMain.jsx';
@@ -11,11 +11,15 @@ import '@mantine/core/styles.css';
 import {   createTheme,MantineProvider } from '@mantine/core';
 import DoAnalysis from './components/DoAnalysis.jsx';
 const NavBar = () => {
+  const nav = useNavigate()
+  const upload = () => {nav(routes.file_in)}
+  const review = () => {nav(routes.file_parse)}
+  const analyze = () => {nav(routes.analysis_main)}
   return (
     <nav> 
-      <button>Upload File</button>
-      <button>Review File</button>
-      <button>Select Analysis</button>
+      <button onClick={upload}>Upload File</button>
+      <button onClick={review}>Review File</button>
+      <button onClick={analyze}>Select Analysis</button>
     </nav>
     
   )
@@ -30,9 +34,10 @@ const items = [
 export default function App() {
   return <MantineProvider theme={theme}>{
     <div>
+      
+      <BrowserRouter>
       <NavBar/>
       <br></br>
-      <BrowserRouter>
       <Routes>
         <Route path={routes.file_in} element={<FileIn/>}/>
         <Route path={routes.file_parse} element={<FileParse/>} />
