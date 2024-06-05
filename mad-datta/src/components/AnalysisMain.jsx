@@ -1,5 +1,5 @@
 import { Alert, Notification } from '@mantine/core'
-import AnalysisCard from './AnalysisCard.jsx'
+import AnalysisCard from './cards/AnalysisCard.jsx'
  const AnalysisMain = () => {
 
     

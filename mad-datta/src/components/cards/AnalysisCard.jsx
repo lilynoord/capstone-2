@@ -1,7 +1,7 @@
 import { Select, Card, Text} from "@mantine/core"
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { routes } from "../../config";
+import { routes } from "../../../config";
 import IncidenceOverXCard from "./IncidenceOverXCard";
 
 
