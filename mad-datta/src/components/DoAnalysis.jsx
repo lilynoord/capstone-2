@@ -3,6 +3,7 @@ import { useState } from "react";
 import ReactiveLineChart from "./charts/ReactiveLineChart";
 import { routes } from "../../config";
 import { Navigate } from "react-router-dom";
+import frequencyAnalyzer from "../analyzers/FrequencyHistogram/frequencyAnalyzer";
 const DoAnalysis = (props) => {
     
     try {
@@ -12,6 +13,8 @@ const DoAnalysis = (props) => {
                 analyzedData = IncidenceOverXAnalyzer();
             
             
+        } else if(props.what=== routes.frequency_histogram) {
+            analyzedData = frequencyAnalyzer();
         } else {
             analyzedData = "null"
         }

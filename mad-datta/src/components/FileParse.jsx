@@ -4,6 +4,7 @@ import {routes} from "../../config.js"
 const FileParse = () => {
 	console.log("1")
 	const fileText = JSON.parse(localStorage.getItem("uploadedFile"))
+	console.log(fileText)
 	let parsedData = parser(fileText)
 	const parseStyle = {
 		display: "flex",
@@ -27,10 +28,12 @@ const FileParse = () => {
 	let component = (
 		<>
 		<div >
+			
 			<button onClick={handleGoodClick}>Looks Good!</button>
 		<> </>
 		<button onClick={handleBadClick}>Re-upload</button>
 		</div>
+		
 		<div>
 			<h4>Columns: {parsedData.length} Rows: {parsedData[0].data.length}</h4>
 		</div>

@@ -32,6 +32,7 @@ const AnalysisCard = (props) => {
     } else if (type === "frequency-histogram"){
         title = "Frequency Histogram"
         card =(<FrequencyHistogramCard/>)
+        redirectURL = routes.frequency_histogram
     } else {
         title = "Null"
         card = (<Text>"Not Found"</Text>)

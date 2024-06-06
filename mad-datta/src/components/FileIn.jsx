@@ -6,7 +6,8 @@ import { useState } from 'react';
 // Reads the file as text and then stores it in session storage. 
 const storeFile = async (file) => {
     const fileText = await file.text();
-    localStorage.setItem("uploadedFile",JSON.stringify(fileText))
+    localStorage.setItem("fileName",file.name);
+    localStorage.setItem("uploadedFile",JSON.stringify(fileText));
     return fileText;
 
   }
@@ -14,6 +15,8 @@ const storeFile = async (file) => {
 
   
 const FileIn = () => {
+    
+     
     const [value, setValue ]= useState(null);
     const nav = useNavigate()
     const handleClick = async (evt) => {

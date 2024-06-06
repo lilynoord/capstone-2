@@ -1,6 +1,5 @@
 import { Select,  } from "@mantine/core"
-import { useEffect, useState } from "react";
- useEffect
+import {  useState } from "react";
 const IncidenceOverXCard = () =>
     {
         

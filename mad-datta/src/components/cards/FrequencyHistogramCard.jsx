@@ -2,8 +2,7 @@ import { Select } from "@mantine/core";
 import { useState } from "react";
 
 const SubSelector = (props) => {
-    const [subSelected, setSubSelected] = useState(null)
-    return (<Select label="Select specific series:" data={props.options} onChange={(e) => {localStorage.setItem("subSelected",e) }}/>)
+     return (<Select label="Select specific series:" data={props.options} onChange={(e) => {localStorage.setItem("subSelected",e) }}/>)
 }
 
 

@@ -3,6 +3,7 @@ const routes = {
 	file_parse: "/file-parse",
 	analysis_main: "/analysis-main",
 	a_over_b: "/incidence-over-x",
+	frequency_histogram: "/frequency-histogram",
 };
 
 const url = "https://image-charts.com/chart?";
