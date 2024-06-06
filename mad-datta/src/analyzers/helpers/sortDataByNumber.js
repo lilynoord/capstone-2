@@ -21,6 +21,6 @@ export default function sortDataByNumber(unsortedData) {
 		//console.log(unsortedData, key, typeof key, unsortedData[key]);
 		data.push(unsortedData[key]);
 	});
-	//console.log(data, unsortedData);
+	console.log(data, unsortedData);
 	return data;
 }

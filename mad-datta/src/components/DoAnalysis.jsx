@@ -3,7 +3,9 @@ import { useState } from "react";
 import ReactiveLineChart from "./charts/ReactiveLineChart";
 import { routes } from "../../config";
 import { Navigate } from "react-router-dom";
-import frequencyAnalyzer from "../analyzers/FrequencyHistogram/frequencyAnalyzer";
+import frequencyAnalyzer from "../analyzers/FrequencyHistogram/FrequencyAnalyzer";
+import ReactiveHistogramChart from "./charts/ReactiveHistogramChart";
+
 const DoAnalysis = (props) => {
     
     try {
@@ -22,6 +24,8 @@ const DoAnalysis = (props) => {
         
         if (analyzedData.chartType === "line"  ) {
             return (<ReactiveLineChart analyzedData={analyzedData}/>)
+        } else if (analyzedData.chartType === "histogram") {
+            return (<ReactiveHistogramChart analyzedData={analyzedData}/>)
         }
         return chart
     } catch (error) {
