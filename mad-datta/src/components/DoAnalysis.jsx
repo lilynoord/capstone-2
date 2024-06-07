@@ -3,8 +3,9 @@ import { useState } from "react";
 import ReactiveLineChart from "./charts/ReactiveLineChart";
 import { routes } from "../../config";
 import { Navigate } from "react-router-dom";
-import frequencyAnalyzer from "../analyzers/FrequencyHistogram/FrequencyAnalyzer";
 import ReactiveHistogramChart from "./charts/ReactiveHistogramChart";
+import doubleColumnFrequencyAnalyzer from "../analyzers/FrequencyHistogram/doubleColumnFrequencyAnalyzer";
+import singleColumnFrequencyAnalyzer from "../analyzers/FrequencyHistogram/singleColumnFrequencyAnalyzer";
 
 const DoAnalysis = (props) => {
     
@@ -16,7 +17,10 @@ const DoAnalysis = (props) => {
             
             
         } else if(props.what=== routes.frequency_histogram) {
-            analyzedData = frequencyAnalyzer();
+            console.log(JSON.parse(localStorage.getItem('singleColumnFrequency')))
+            analyzedData = JSON.parse(localStorage.getItem('singleColumnFrequency')) 
+            ? singleColumnFrequencyAnalyzer() 
+            : doubleColumnFrequencyAnalyzer();
         } else {
             analyzedData = "null"
         }
@@ -29,7 +33,7 @@ const DoAnalysis = (props) => {
         }
         return chart
     } catch (error) {
-        localStorage.setItem("analysis-error",error.message)
+        localStorage.setItem("analysis-error",error)
         console.log(error)
         return(<Navigate to={routes.analysis_main}/>);
     }

@@ -16,7 +16,7 @@ import AnalysisCard from './cards/AnalysisCard.jsx'
         <div>
             {passedError !== null ?  <Notification withCloseButton={false} withBorder color="red" radius="xs" title="Analysis Error"  >{passedError}</Notification> : null
             } 
-            <div><h5>{localStorage.getItem("fileName")}</h5></div>
+            
             <table>
                 <tbody>
 

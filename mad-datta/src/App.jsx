@@ -54,7 +54,7 @@ export default function App() {
         <Route  path={routes.file_in} element={<FileIn/>}/>
         <Route path={routes.file_parse} element={<FileParse/>} />
         <Route path={`${routes.analysis_main}`} element={<AnalysisMain />}/>
-        <Route  path={routes.a_over_b} element={<DoAnalysis what={routes.a_over_b}/>} />
+        <Route path={routes.a_over_b} element={<DoAnalysis what={routes.a_over_b}/>} />
         <Route path={routes.frequency_histogram} element={<DoAnalysis what={routes.frequency_histogram}/>}/>
       </Routes>
        

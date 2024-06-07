@@ -1,7 +1,6 @@
-import getSeries from "../helpers/getSeries";
 import sortDataByNumber from "../helpers/sortDataByNumber";
 
-export default function frequencyAnalyzer() {
+export default function doubleColumnFrequencyAnalyzer() {
 	//Get all the column data we need
 	const subSelected = localStorage.getItem("subSelected");
 	const primarySelected = localStorage.getItem("primarySelected");
@@ -15,7 +14,7 @@ export default function frequencyAnalyzer() {
 	//Get the indices of each entry that matches the selected option
 	let indices = [];
 	itemColumn.data.map((item, index) =>
-		item === subSelected ? indices.push(index) : null
+		String(item) === subSelected ? indices.push(index) : null
 	);
 
 	//Get the raw intervals that match the selected option

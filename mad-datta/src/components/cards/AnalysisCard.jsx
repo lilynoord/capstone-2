@@ -40,7 +40,7 @@ const AnalysisCard = (props) => {
 
 
     return (
-        <Card  shadow="sm" padding="lg" radius="md" withBorder>
+        <Card w={300} h={350} shadow="sm" padding="lg" radius="md" withBorder>
             <Card.Section withBorder>
                 <Text>{title}</Text>
             </Card.Section>
