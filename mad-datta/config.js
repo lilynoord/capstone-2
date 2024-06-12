@@ -61,5 +61,6 @@ const cleanStorage = () => {
 	localStorage.removeItem("xAxis");
 	localStorage.removeItem("yAxis");
 	localStorage.removeItem("intervalSelected");
+	localStorage.removeItem("subSelected");
 };
 export { routes, url, colors, cleanStorage };
