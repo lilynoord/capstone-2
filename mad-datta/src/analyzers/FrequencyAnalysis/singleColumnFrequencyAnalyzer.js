@@ -4,6 +4,10 @@ import sortDataByValueByNumber from "../helpers/sortDataByValueByNumber";
 export default function singleColumnFrequencyAnalyzer(histogram) {
 	const parsedData = JSON.parse(localStorage.getItem("parsed_data"));
 	const primarySelected = localStorage.getItem("primarySelected");
+
+	if (!primarySelected) {
+		throw new Error("Please make required selections");
+	}
 	const itemColumn = parsedData.filter((m) => m.label === primarySelected)[0];
 	let counts = {};
 	itemColumn.data.map((item) => {

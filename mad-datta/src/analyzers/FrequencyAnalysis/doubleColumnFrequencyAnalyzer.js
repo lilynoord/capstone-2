@@ -7,6 +7,11 @@ export default function doubleColumnFrequencyAnalyzer(histogram) {
 	const subSelected = localStorage.getItem("subSelected");
 	const primarySelected = localStorage.getItem("primarySelected");
 	const intervalSelected = localStorage.getItem("intervalSelected");
+
+	if (!subSelected || !primarySelected || !intervalSelected) {
+		throw new Error("Please make required selections");
+	}
+
 	const parsedData = JSON.parse(localStorage.getItem("parsed_data"));
 	const itemColumn = parsedData.filter((m) => m.label === primarySelected)[0];
 	const intervalColumn = parsedData.filter(

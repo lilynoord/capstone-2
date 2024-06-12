@@ -5,6 +5,7 @@ const routes = {
 	a_over_b: "/incidence-over-x",
 	frequency_histogram: "/frequency-histogram",
 	frequency_pie: "/frequency-pie-chart",
+	scatter_chart: "/scatter_chart",
 };
 
 const url = "https://image-charts.com/chart?";
@@ -50,4 +51,15 @@ const colors = [
 	"teal.5",
 	"yellow.5",
 ];
-export { routes, url, colors };
+
+const cleanStorage = () => {
+	localStorage.removeItem("primarySelected");
+	localStorage.removeItem("singleColumnFrequency");
+	localStorage.removeItem("singleSeries");
+	localStorage.removeItem("valueA");
+	localStorage.removeItem("valueB");
+	localStorage.removeItem("xAxis");
+	localStorage.removeItem("yAxis");
+	localStorage.removeItem("intervalSelected");
+};
+export { routes, url, colors, cleanStorage };

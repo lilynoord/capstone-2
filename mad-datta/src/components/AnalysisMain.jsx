@@ -1,5 +1,6 @@
 import { Alert, Notification } from '@mantine/core'
 import AnalysisCard from './cards/AnalysisCard.jsx'
+import { cleanStorage } from '../../config.js'
  const AnalysisMain = () => {
 
     
@@ -9,8 +10,7 @@ import AnalysisCard from './cards/AnalysisCard.jsx'
     passedError = passedError2 ? passedError2 : passedError;
     passedError ? localStorage.removeItem('analysis-error') : null;
     passedError2 ? localStorage.removeItem('analysis-error2') : null;
-    
-
+    cleanStorage();
     return(
         
         <div>
@@ -38,10 +38,10 @@ import AnalysisCard from './cards/AnalysisCard.jsx'
                 </tr>
                 <tr>
                     <td>
-                    <AnalysisCard type="A" />
+                    
                     </td>
                     <td>
-                    <AnalysisCard type="Histogram" />
+                    <AnalysisCard type="scatter-chart" />
                     </td>
                     <td>
                         
