@@ -33,7 +33,7 @@ import AnalysisCard from './cards/AnalysisCard.jsx'
             
                     </td>
                     <td>
-                        <AnalysisCard type="Line Graph" />
+                        <AnalysisCard type="frequency-pie" />
                     </td>
                 </tr>
                 <tr>

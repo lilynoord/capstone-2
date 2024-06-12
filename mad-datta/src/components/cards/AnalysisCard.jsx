@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { routes } from "../../../config";
 import IncidenceOverXCard from "./IncidenceOverXCard";
 import FrequencyHistogramCard from "./FrequencyHistogramCard";
+import FrequencyPieChartCard from "./FrequencyPieChartCard";
 
 
 
@@ -33,6 +34,10 @@ const AnalysisCard = (props) => {
         title = "Frequency Histogram"
         card =(<FrequencyHistogramCard/>)
         redirectURL = routes.frequency_histogram
+    } else if (type === "frequency-pie"){
+        title = "Frequency Pie Chart"
+        card =(<FrequencyPieChartCard/>)
+        redirectURL = routes.frequency_pie
     } else {
         title = "Null"
         card = (<Text>"Not Found"</Text>)

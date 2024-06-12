@@ -4,6 +4,7 @@ const routes = {
 	analysis_main: "/analysis-main",
 	a_over_b: "/incidence-over-x",
 	frequency_histogram: "/frequency-histogram",
+	frequency_pie: "/frequency-pie-chart",
 };
 
 const url = "https://image-charts.com/chart?";

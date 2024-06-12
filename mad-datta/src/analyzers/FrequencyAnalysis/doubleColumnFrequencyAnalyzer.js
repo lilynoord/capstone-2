@@ -1,6 +1,8 @@
+import { colors } from "../../../config";
 import sortDataByNumber from "../helpers/sortDataByNumber";
+import sortDataByValueByNumber from "../helpers/sortDataByValueByNumber";
 
-export default function doubleColumnFrequencyAnalyzer() {
+export default function doubleColumnFrequencyAnalyzer(histogram) {
 	//Get all the column data we need
 	const subSelected = localStorage.getItem("subSelected");
 	const primarySelected = localStorage.getItem("primarySelected");
@@ -30,19 +32,40 @@ export default function doubleColumnFrequencyAnalyzer() {
 			? counts[String(interval)]++
 			: (counts[String(interval)] = 1);
 	});
-	let data = [];
 
-	Object.keys(counts).map((interval) => {
-		data.push({ interval: interval, frequency: counts[interval] });
-	});
-	const dataPackage = {
-		chartType: "histogram",
-		dataKey: "interval",
-		rawData: {
-			series: [{ name: "frequency", color: "blue.6" }],
-			data: sortDataByNumber(data),
-		},
-	};
-	console.log(dataPackage);
-	return dataPackage;
+	if (histogram) {
+		let data = [];
+		Object.keys(counts).map((interval) => {
+			data.push({ interval: interval, frequency: counts[interval] });
+		});
+		const dataPackage = {
+			chartType: "histogram",
+			dataKey: "interval",
+			rawData: {
+				series: [{ name: "frequency", color: "blue.6" }],
+				data: sortDataByNumber(data),
+			},
+		};
+		console.log(dataPackage);
+		return dataPackage;
+	} else {
+		let data = [];
+		let colorIndex = 0;
+		Object.keys(counts).map((interval) => {
+			colorIndex >= colors.length ? (colorIndex = 0) : colorIndex++;
+			data.push({
+				name: interval,
+				value: counts[interval],
+				color: colors[colorIndex],
+			});
+		});
+		const dataPackage = {
+			chartType: "pieChart",
+			rawData: {
+				data: sortDataByValueByNumber(data),
+			},
+		};
+		console.log(dataPackage);
+		return dataPackage;
+	}
 }
