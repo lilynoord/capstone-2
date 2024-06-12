@@ -5,6 +5,7 @@ import { routes } from "../../../config";
 import IncidenceOverXCard from "./IncidenceOverXCard";
 import FrequencyHistogramCard from "./FrequencyHistogramCard";
 import FrequencyPieChartCard from "./FrequencyPieChartCard";
+import ScatterChartCard from "./ScatterChartCard";
 
 
 
@@ -38,6 +39,10 @@ const AnalysisCard = (props) => {
         title = "Frequency Pie Chart"
         card =(<FrequencyPieChartCard/>)
         redirectURL = routes.frequency_pie
+    } else if (type === "scatter-chart"){
+        title = "Scatter Chart"
+        card =(<ScatterChartCard/>)
+        redirectURL = routes.scatter_chart
     } else {
         title = "Null"
         card = (<Text>"Not Found"</Text>)

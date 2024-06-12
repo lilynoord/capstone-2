@@ -7,6 +7,9 @@ import ReactiveHistogramChart from "./charts/ReactiveHistogramChart";
 import doubleColumnFrequencyAnalyzer from "../analyzers/FrequencyAnalysis/doubleColumnFrequencyAnalyzer";
 import singleColumnFrequencyAnalyzer from "../analyzers/FrequencyAnalysis/singleColumnFrequencyAnalyzer";
 import ReactivePieChart from "./charts/ReactivePieChart";
+import singleSeriesScatterAnalyzer from "../analyzers/ScatterChart/singleSeriesScatterAnalyzer";
+import multipleSeriesScatterAnalyzer from "../analyzers/ScatterChart/multipleSeriesScatterAnalyzer";
+import ReactiveScatterChart from "./charts/ReactiveScatterChart";
 
 const DoAnalysis = (props) => {
     
@@ -27,6 +30,11 @@ const DoAnalysis = (props) => {
             analyzedData = JSON.parse(localStorage.getItem('singleColumnFrequency')) 
             ? singleColumnFrequencyAnalyzer(false) 
             : doubleColumnFrequencyAnalyzer(false);
+        } else if (props.what === routes.scatter_chart){
+            analyzedData = JSON.parse(localStorage.getItem("singleSeries")) 
+            ? singleSeriesScatterAnalyzer() 
+            : multipleSeriesScatterAnalyzer(); 
+            
         } else {
             analyzedData = "null"
         }
@@ -38,6 +46,8 @@ const DoAnalysis = (props) => {
             return (<ReactiveHistogramChart analyzedData={analyzedData}/>)
         } else if (analyzedData.chartType === "pieChart"){
             return (<ReactivePieChart analyzedData={analyzedData}/>)
+        } else if (analyzedData.chartType === "scatter"){
+            return (<ReactiveScatterChart analyzedData={analyzedData}/>)
         }
         return chart
     } catch (error) {

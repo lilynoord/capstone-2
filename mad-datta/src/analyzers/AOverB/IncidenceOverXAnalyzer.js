@@ -17,6 +17,9 @@ const IncidenceOverXAnalyzer = () => {
 
 	const valueA = localStorage.getItem("valueA");
 	const valueB = localStorage.getItem("valueB");
+	if (!valueA || !valueB) {
+		throw new Error("Please make required selections");
+	}
 	const filteredA = parsedData.filter((m) => m.label === valueA)[0];
 	const filteredB = parsedData.filter((m) => m.label === valueB)[0];
 
