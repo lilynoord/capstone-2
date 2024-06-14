@@ -1,4 +1,6 @@
 import getSeries from "../helpers/getSeries";
+import normalizeLineData from "../helpers/normalizeLineData";
+import normalizeScatterData from "../helpers/normalizeScatterData";
 
 const getDataPoints = (xColumn, yColumn, seriesColumn, groupName) => {
 	let indices = [];
@@ -32,7 +34,8 @@ export default function multipleSeriesScatterAnalyzer() {
 			data: getDataPoints(xColumn, yColumn, seriesColumn, group.name),
 		};
 	});
-	return {
+
+	let dataPackage = {
 		chartType: "scatter",
 		data,
 		dataKey: { x: "x", y: "y" },
@@ -40,4 +43,6 @@ export default function multipleSeriesScatterAnalyzer() {
 		yAxisLabel,
 		series,
 	};
+	dataPackage.normalizedData = normalizeScatterData(data);
+	return dataPackage;
 }
