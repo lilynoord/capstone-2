@@ -11,7 +11,7 @@ const ReactiveScatterChart = (props) => {
         dataKey={analyzedData.dataKey}
         xAxisLabel={analyzedData.xAxisLabel}
         yAxisLabel={analyzedData.yAxisLabel}
-
+        withLegend
         />
         </>
        
