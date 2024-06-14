@@ -45,6 +45,7 @@ const ReactiveLineChart = (props) => {
     }
     return  (
             <div>
+                <h2>{analyzedData.title}</h2>
             <table>
                 <tr>
                     <td>

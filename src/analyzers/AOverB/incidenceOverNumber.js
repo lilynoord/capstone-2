@@ -41,5 +41,7 @@ export default function incidenceOverNumber(yData, xData) {
 	dataPackage.dataNormalized = normalizeLineData(dataPackage);
 
 	console.log(dataPackage);
+	dataPackage.title = `Incidence of ${yData.label} over ${xData.label}`;
+
 	return dataPackage;
 } //Line Graph

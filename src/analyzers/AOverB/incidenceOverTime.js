@@ -37,7 +37,7 @@ export default function incidenceOverTime(yData, xData) {
 	dataPackage.dataAbsolute = sortDataByDate(unsortedData);
 	dataPackage.dataKey = "date";
 	dataPackage.dataNormalized = normalizeLineData(dataPackage);
-
+	dataPackage.title = `Incidence of ${yData.label} over ${xData.label}`;
 	console.log(dataPackage);
 	return dataPackage;
 } //Line Graph

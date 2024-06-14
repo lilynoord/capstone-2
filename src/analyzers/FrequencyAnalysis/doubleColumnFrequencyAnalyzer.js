@@ -44,6 +44,7 @@ export default function doubleColumnFrequencyAnalyzer(histogram) {
 			data.push({ interval: interval, frequency: counts[interval] });
 		});
 		const dataPackage = {
+			title: `${intervalSelected} Frequency for ${primarySelected} ${subSelected}`,
 			chartType: "histogram",
 			dataKey: "interval",
 			rawData: {
@@ -65,6 +66,7 @@ export default function doubleColumnFrequencyAnalyzer(histogram) {
 			});
 		});
 		const dataPackage = {
+			title: `${intervalSelected} Frequency for ${primarySelected} ${subSelected}`,
 			chartType: "pieChart",
 			rawData: {
 				data: sortDataByValueByNumber(data),

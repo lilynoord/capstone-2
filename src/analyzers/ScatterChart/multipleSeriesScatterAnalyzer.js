@@ -7,8 +7,9 @@ const getDataPoints = (xColumn, yColumn, seriesColumn, groupName) => {
 	seriesColumn.data.map((item, index) =>
 		String(item) === String(groupName) ? indices.push(index) : null
 	);
+
 	return indices.map((i) => {
-		return { x: xColumn.data[i], y: yColumn.data[i] };
+		return { x: Number(xColumn.data[i]), y: yColumn.data[i] };
 	});
 };
 export default function multipleSeriesScatterAnalyzer() {
@@ -44,5 +45,6 @@ export default function multipleSeriesScatterAnalyzer() {
 		series,
 	};
 	dataPackage.normalizedData = normalizeScatterData(data);
+	console.log(dataPackage);
 	return dataPackage;
 }

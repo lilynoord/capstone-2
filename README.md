@@ -1,15 +1,23 @@
-# capstone-2
+# Capstone Project #2
 
-The overall idea:
+This is a simple web application that allows for quick and easy data visualization. It operates by reading a `.tsv` file, parsing the data by column, and then providing you options to select columns, run various analysis on them via a server-side api, and then display the results as responsive and easy to understand charts. For simplicity and speed, it is state-based and database free.
 
-- An app that takes in a tsv file and allows someone to conduct various forms of data analysis on it really easily.
+## Documentation
 
-General flow:
+### File Structure
 
-1. Import tsv file
-2. App reads the first line of the file and determines the number of columns
-3. User sets the data type for each column
-   If string, then selects the total number of options for it.
-4. App reads the file and sorts data into database
-5. User selects analysis to perform
-6. App performs analysis and generates simple visualization of the data.
+The `.tsv` file containing your data should be formatted in columns, with the top row functioning as headers.
+
+### Column Data Types
+
+Each column is parsed and assigned a data type. If no single data type is found in a column, then it is assigned the `string` type.
+
+| Type     | Format           |
+| -------- | ---------------- |
+| `Number` | `Int` or `Float` |
+| `Date`   | `YYYY-MM-DD`     |
+| `String` | anything         |
+
+### Analysis Options
+
+####

@@ -22,6 +22,7 @@ export default function singleColumnFrequencyAnalyzer(histogram) {
 			data.push({ interval: interval, frequency: counts[interval] });
 		});
 		const dataPackage = {
+			title: primarySelected + " Frequency",
 			chartType: "histogram",
 			dataKey: "interval",
 			rawData: {
@@ -42,6 +43,7 @@ export default function singleColumnFrequencyAnalyzer(histogram) {
 			});
 		});
 		const dataPackage = {
+			title: primarySelected + " Frequency",
 			chartType: "pieChart",
 			rawData: {
 				data: sortDataByValueByNumber(data),

@@ -3,6 +3,7 @@ import { ScatterChart } from "@mantine/charts";
 const ReactiveScatterChart = (props) => {
     const analyzedData = props.analyzedData 
     return (
+        <> <h2>{analyzedData.title}</h2>
         <ScatterChart 
         w={600}
         h={300}
@@ -12,6 +13,8 @@ const ReactiveScatterChart = (props) => {
         yAxisLabel={analyzedData.yAxisLabel}
 
         />
+        </>
+       
     )
 }
 

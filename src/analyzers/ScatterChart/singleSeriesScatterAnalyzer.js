@@ -18,6 +18,7 @@ export default function singleSeriesScatterAnalyzer() {
 	];
 	console.log(data);
 	return {
+		title: `${yAxisLabel} over ${xAxisLabel}`,
 		chartType: "scatter",
 		data,
 		dataKey: { x: "x", y: "y" },
