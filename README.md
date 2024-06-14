@@ -20,4 +20,20 @@ Each column is parsed and assigned a data type. If no single data type is found 
 
 ### Analysis Options
 
-####
+#### Incidence-Over-X
+
+Analyze the incidence count of items in column A over column B. Column B can either be a date or a time.
+
+#### Frequency Analysis
+
+Analyze the frequency of the data and display as either a histogram or pie chart.
+
+Double Column Frequency: Select a column and then select one of the items that appears in it as well as a second column to derive intervals from. The occurrence of the selected item will be counted and mapped to each derived interval.
+
+Single Column Frequency: Select a single column. The occurrence of each item or interval in that column will be counted.
+
+#### Scatter Analysis
+
+Multiple series: Select a column to derive the series from and select two columns to use as x and y axis. Each row will be a data point.
+
+Single Series: Select just the x and y axis. Each row will be a data point.

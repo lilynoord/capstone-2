@@ -37,6 +37,7 @@ export default function multipleSeriesScatterAnalyzer() {
 	});
 
 	let dataPackage = {
+		title: `${yAxisLabel} by ${xAxisLabel} for ${primarySelectedLabel}`,
 		chartType: "scatter",
 		data,
 		dataKey: { x: "x", y: "y" },
