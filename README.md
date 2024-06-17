@@ -37,3 +37,5 @@ Single Column Frequency: Select a single column. The occurrence of each item or 
 Multiple series: Select a column to derive the series from and select two columns to use as x and y axis. Each row will be a data point.
 
 Single Series: Select just the x and y axis. Each row will be a data point.
+
+![alt text](image.png)
