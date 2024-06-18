@@ -1,12 +1,13 @@
 # Capstone Project #2
 
-This is a simple web application that allows for quick and easy data visualization. It operates by reading a `.tsv` file, parsing the data by column, and then providing you options to select columns, run various analysis on them via a server-side api, and then display the results as responsive and easy to understand charts. For simplicity and speed, it is state-based and database free.
+This is a simple web application that allows for quick and easy data visualization. It operates by reading a `.tsv` file, parsing the data by column, and then providing you options to select columns, run various analysis on them via a server-side api, and then display the results as responsive and easy to understand charts. For simplicity and speed, it is state-based and database free. **To test the app, you can use the 
+`Example Data Sheet - Bug Collection.tsv` file. 
 
 ## Documentation
 
 ### File Structure
 
-The `.tsv` file containing your data should be formatted in columns, with the top row functioning as headers.
+The `.tsv` file containing your data should be formatted in columns, with the top row functioning as headers. Each row is treated as a single data point. See `Example Data Sheet - Bug Collection.tsv` for an example. 
 
 ### Column Data Types
 
